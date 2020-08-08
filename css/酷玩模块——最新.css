@@ -1,0 +1,80 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.bik{
+	border-top: solid 2px gainsboro;
+	width: 100%;
+}
+.bi_box{
+	width: 100%;
+	height: 170px;
+	
+}
+.header_8{
+	margin: 0 auto;
+	width: 1000px;
+	height: 170px;
+	text-align: center;
+	
+}
+.header_8 p{
+	height:148px;
+	line-height: 148px;
+	font-size: 38px;
+}
+.header_8 span{
+	padding:0px  58px 0px 58px ;
+	
+}
+
+.box_6{
+	background-color: #f7f7f7;
+	height: 888px;
+	display: none;
+}
+.big_7{
+	
+	width: 100%;
+	background-color: #f7f7f7;
+}
+.box_7{
+	height: 3130px;
+	background-color: #f7f7f7;
+}
+.box_7_content_1 p{
+	
+	border-left: solid 2px red;
+}
+.box_7_content_2{
+	background-color: white;
+}
+.box_7_content_3{
+background-color: white;	
+}
+.box_7_content_4{
+	margin-top: 30px; 
+	padding-top: 18px;
+    background-color: white;	
+}
+.box_7_content_5{
+	margin-top: 30px; 
+	padding-top: 18px;
+    background-color: white;	
+}
+.box_7_content_6{
+	margin-top: 30px; 
+	padding-top: 18px;
+    background-color: white;	
+}
+.box_7_content_7{
+	margin-top: 30px; 
+	padding-top: 18px;
+    background-color: white;	
+}
+.box_7_content_8{
+	margin-top: 30px; 
+	padding-top: 18px;
+    background-color: white;	
+}

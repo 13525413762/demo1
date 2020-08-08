@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ai'dai'</title>
+		<link rel="stylesheet" type="text/css" href="css/foot.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/注册页面.css"/>
+	<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function  () {
+			$("input:eq(1)").css("width","200px");
+			$("input:eq(2)").css("width","200px");
+			$("#span1").click(function  () {
+			var str="123456789";
+			var zm="zxcbnmlkjhgfdsaqwertyuiop";
+			var suiji=Math.floor(Math.random()*str.length);
+			var suiji1=Math.floor(Math.random()*zm.length);
+			var suiji2=Math.floor(Math.random()*str.length);
+			var suiji3=Math.floor(Math.random()*zm.length);
+			$("#span1").html(str.charAt(suiji)+zm.charAt(suiji1)+str.charAt(suiji2)+zm.charAt(suiji3));
+			
+			})
+			$("span:eq(1)").click(function  () {
+				var i=60;
+				dsq=window.setInterval(function  () {
+					i--;
+					$("span:eq(1)").text(i);
+					if (i==0) {
+						$("span:eq(1)").text("请重新获取验证码！");
+						clearInterval(dsq);
+					} 
+					
+				},1000)
+				
+			})
+			var str="123456789";
+			var zm="zxcbnmlkjhgfdsaqwertyuiop";
+			var suiji=Math.floor(Math.random()*str.length);
+			var suiji1=Math.floor(Math.random()*zm.length);
+			var suiji2=Math.floor(Math.random()*str.length);
+			var suiji3=Math.floor(Math.random()*zm.length);
+			$("#span1").html(str.charAt(suiji)+zm.charAt(suiji1)+str.charAt(suiji2)+zm.charAt(suiji3));
+			
+			$("input:eq(0)").blur(function  () {
+			if (/^1[0-9]{10}/.test($("input:eq(0)").val())) {
+					$("input:eq(0)").css("border","solid 1px green");
+					$(".tank1").hide();
+			} else if($("input:eq(0)").val()==""){
+				$(".tank1").show();
+				$(".tank1").text("手机号不能为空！");
+				$("input:eq(0)").css("border","solid 1px red");
+			}else{
+				$(".tank1").show();
+				$(".tank1").text("手机号格式不对！");
+				$("input:eq(0)").css("border","solid 1px red");
+			}
+			})
+			$("input:eq(1)").blur(function  () {
+			if ($("input:eq(1)").val()==$("#span1").html()) {
+				$("input:eq(1)").css("border","solid 1px green");
+				$(".tank2").hide();
+			} else if($("input:eq(1)").val()==""){
+				$(".tank2").show();
+				$(".tank2").text("请输入验证码！");
+				$("input:eq(1)").css("border","solid 1px red");
+			}else{
+				$(".tank2").show();
+				$(".tank2").text("验证码不正确！");
+				$("input:eq(1)").css("border","solid 1px red");
+			}
+			})
+			$("input:eq(2)").blur(function  () {
+			if (/[0-9]{4}/.test($("input:eq(2)").val())) {
+				$("input:eq(2)").css("border","solid 1px green");
+				$(".tank3").hide();
+			} else if($("input:eq(2)").val()==""){
+				$(".tank3").show();
+				$(".tank3").text("请输入验证码！");
+				$("input:eq(2)").css("border","solid 1px red");
+			}else{
+				$(".tank3").show();
+				$(".tank3").text("验证码不正确！");
+				$("input:eq(2)").css("border","solid 1px red");
+			}
+			})
+			$("input:eq(3)").blur(function  () {
+			if (/[\u4e00-\u9fa5]/.test($("input:eq(3)").val())) {
+				$("input:eq(3)").css("border","solid 1px green");
+				$(".tank4").hide();
+			} else if($("input:eq(3)").val()==""){
+				$(".tank4").show();
+				$(".tank4").text("请输入用户名！");
+				$("input:eq(3)").css("border","solid 1px red");
+			}else{
+				$(".tank4").show();
+				$(".tank4").text("用户名格式不正确！");
+				$("input:eq(3)").css("border","solid 1px red");
+			}
+			})
+			$("input:eq(4)").blur(function  () {
+			if (/[a-zA-Z]{6}/.test($("input:eq(4)").val())) {
+				$(".tank5").show();
+				$("input:eq(4)").css("border","solid 1px green");
+				$(".tank5").text("请输入数字带字母的密码");
+			} else if($("input:eq(4)").val()==""){
+				$(".tank5").show();
+				$(".tank5").text("请输入验证码！");
+				$("input:eq(4)").css("border","solid 1px red");
+			}else if(/[0-9]{6}/.test($("input:eq(4)").val())){
+				$(".tank5").show();
+				$("input:eq(4)").css("border","solid 1px green");
+				$(".tank5").text("请输入数字带字母的密码");
+			}else if(/[0-9a-zA-Z]{6}/.test($("input:eq(4)").val())){
+				$("input:eq(4)").css("border","solid 1px green");
+				$(".tank5").hide();
+			}
+			else{
+				$(".tank5").show();
+				$(".tank5").text("请输入六位数密码");
+				$("input:eq(4)").css("border","solid 1px red");
+			}
+			})
+			$("input:eq(5)").blur(function  () {
+				
+				 if($("input:eq(5)").val()==""){
+				 	$(".tank6").show();
+				$(".tank6").text("请再次输入密码！");
+				$("input:eq(5)").css("border","solid 1px red");
+			}
+			 else if ($("input:eq(4)").val()==$("input:eq(5)").val()) {
+				$("input:eq(5)").css("border","solid 1px green");
+				$(".tank6").hide();
+			}else{
+				$(".tank6").show();
+				$(".tank6").text("密码与上次不同！");
+				$("input:eq(5)").css("border","solid 1px red");
+			}
+			})
+			$("[type='button']").click(function  () {
+				if (/^1[0-9]{10}/.test($("input:eq(0)").val())) {
+					$("input:eq(0)").css("border","solid 1px green");
+					$(".tank1").hide();
+			} else if($("input:eq(0)").val()==""){
+				$(".tank1").show();
+				$(".tank1").text("手机号不能为空！");
+				$("input:eq(0)").css("border","solid 1px red");
+			}else{
+				$(".tank1").show();
+				$(".tank1").text("手机号格式不对！");
+				$("input:eq(0)").css("border","solid 1px red");
+			}
+			
+			
+			if ($("input:eq(1)").val()==$("#span1").html()) {
+				$("input:eq(1)").css("border","solid 1px green");
+				$(".tank2").hide();
+			} else if($("input:eq(1)").val()==""){
+				$(".tank2").show();
+				$(".tank2").text("请输入验证码！");
+				$("input:eq(1)").css("border","solid 1px red");
+			}else{
+				$(".tank2").show();
+				$(".tank2").text("验证码不正确！");
+				$("input:eq(1)").css("border","solid 1px red");
+			}
+			
+			
+			if (/[0-9]{4}/.test($("input:eq(2)").val())) {
+				$("input:eq(2)").css("border","solid 1px green");
+				$(".tank3").hide();
+			} else if($("input:eq(2)").val()==""){
+				$(".tank3").show();
+				$(".tank3").text("请输入验证码！");
+				$("input:eq(2)").css("border","solid 1px red");
+			}else{
+				$(".tank3").show();
+				$(".tank3").text("验证码不正确！");
+				$("input:eq(2)").css("border","solid 1px red");
+			}
+			
+			
+			if (/[\u4e00-\u9fa5]/.test($("input:eq(3)").val())) {
+				$("input:eq(3)").css("border","solid 1px green");
+				$(".tank4").hide();
+			} else if($("input:eq(3)").val()==""){
+				$(".tank4").show();
+				$(".tank4").text("请输入用户名！");
+				$("input:eq(3)").css("border","solid 1px red");
+			}else{
+				$(".tank4").show();
+				$(".tank4").text("用户名格式不正确！");
+				$("input:eq(3)").css("border","solid 1px red");
+			}
+			
+			
+			if (/[a-zA-Z]{6}/.test($("input:eq(4)").val())) {
+				$(".tank5").show();
+				$("input:eq(4)").css("border","solid 1px green");
+				$(".tank5").text("请输入数字带字母的密码");
+			} else if($("input:eq(4)").val()==""){
+				$(".tank5").show();
+				$(".tank5").text("请输入验证码！");
+				$("input:eq(4)").css("border","solid 1px red");
+			}else if(/[0-9]{6}/.test($("input:eq(4)").val())){
+				$(".tank5").show();
+				$("input:eq(4)").css("border","solid 1px green");
+				$(".tank5").text("请输入数字带字母的密码");
+			}else if(/[0-9a-zA-Z]{6}/.test($("input:eq(4)").val())){
+				$("input:eq(4)").css("border","solid 1px green");
+				$(".tank5").hide();
+			}
+			else{
+				$(".tank5").show();
+				$(".tank5").text("请输入六位数密码");
+				$("input:eq(4)").css("border","solid 1px red");
+			}
+			
+			
+				
+				 if($("input:eq(5)").val()==""){
+				 	$(".tank6").show();
+				$(".tank6").text("请再次输入密码！");
+				$("input:eq(5)").css("border","solid 1px red");
+			}
+			 else if ($("input:eq(4)").val()==$("input:eq(5)").val()) {
+				$("input:eq(5)").css("border","solid 1px green");
+				$(".tank6").hide();
+			}else{
+				$(".tank6").show();
+				$(".tank6").text("密码与上次不同！");
+				$("input:eq(5)").css("border","solid 1px red");
+			}
+			
+			})
+		})
+	</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="header">
+				<ul class="left">
+					<li class="logo"><img src="img/logonew.png"/></li>
+					<li><a href="首页.html">首页</a></li>
+					<li><a href="酷玩模块——最新.html">酷玩</a></li>
+					<li><a href="导购——最新.html">导购</a></li>
+					<li><a href="试用——大众试用.html">试用</a></li>
+					<li><a href="报告——最新.html">报告</a></li>
+				</ul>
+				<ul class="right">
+					<li><button><a href="注册页面.html" style="color: orange;">注册</a></button></li>
+					<li><a href=""><img src="img/search.png"/></a></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		
+		
+		<div class="bg">
+			<div class="bg1">
+				<br />
+				<br />
+				<div class="bg1_1">
+					<p style="margin-top: 20px; padding-left: 10px; border-left: solid 3px red;"> 注册极果 </p>
+				
+				
+				<div class="form">
+					<form >
+					<input type="text"  value="" placeholder="请输入登录手机号"  /><br />
+					<input type="text"   value="" placeholder="请输入图片验证码" /><span id="span1"></span><br />
+					<input type="text"  value="" placeholder="请输入4位数验证码" /><span>获取验证码</span><br />
+					<input type="text"  value="" placeholder="请输入汉字用户名" /><br />
+					<input type="text"   value="" placeholder="请输入六位数新密码" /><br />
+					<input type="text"   value="" placeholder="确认新密码" /><br />
+					<input type="button" value="立即注册" />
+				</form>
+				
+				<div class="tank1">
+					
+				</div>
+				<div class="tank2">
+					
+				</div>
+				<div class="tank3">
+					
+				</div>
+				<div class="tank4">
+					
+				</div>
+				<div class="tank5">
+					
+				</div>
+				<div class="tank6">
+					
+				</div>
+				</div>
+				
+				
+				
+				
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		
+		<div class="foot">
+			<div class="foot_content">
+				<ul>
+					<li>
+						<img src="img/code.png"/>
+					</li>
+					<li>
+						<img src="img/logoImg.jpg"/>
+						<p>全球酷玩试用导购平台<br/>酷.新奇.好玩.品质</p>
+						<p>微信添加“lguolguo”<br/>获取我们的服务</p>
+					</li>
+					<li>
+						<h4>免费试用</h4>
+						<p>使用流程<br />如何提高成功率</p>
+						
+					</li>
+					<li class="content_middle">
+						<h4>友情链接</h4>
+						<ul>
+							<li>智东西</li>
+							<li>搜狐IT</li>
+							<li>搜狐数码</li>
+							<li>凤凰数码</li>
+							<li>泡泡网</li>
+							<li>ZUK社区</li>
+							<li>极客公园</li>
+							<li>果库</li>
+						</ul>
+						<ul>
+							<li>WEIBESI</li>
+							<li>腾讯科技</li>
+							<li>凤凰科技</li>
+							<li>PCONline</li>
+							<li>3W咖啡</li>
+							<li>亿觅emie</li>
+							<li>易迅易启玩</li>
+							
+						</ul>
+					</li>
+					
+					<li>
+						<h4>导购攻略</h4>
+						<ul>
+							<li>美亚海陶教程</li>
+							<li>日亚海陶教程</li>
+							<li>海淘转运攻略</li>
+							<li>kickstarter 众筹购买攻略</li>
+							<li>indiegogo 众筹购买攻略</li>
+							
+						</ul>
+					</li>
+					<li>
+						<h4>商家合作</h4>
+						<ul>
+					<a href="商务合作.html" style="color:black;"><li>关于极果</li></a>		
+							<li>联系我们</li>
+							<li>商务合作：BD@jiguo.com</li>
+							<li>CEO邮箱：CEO@jiguo.com</li>
+							
+							
+						</ul>
+					</li>
+				</ul>
+				<p class="foot_bottom">⚪ 2016 极果版权所有</p>
+			</div>
+		</div>
+		
+	</body>
+</html>
